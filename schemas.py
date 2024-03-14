@@ -7,7 +7,7 @@ from pydantic import BaseModel
 class TaskAdd(BaseModel):
     name: str
     description: Optional[str] = None
-    created: datetime = datetime.now
+    created: datetime = datetime.now()
 
 
 class Task(TaskAdd):
