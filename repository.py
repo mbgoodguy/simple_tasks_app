@@ -26,8 +26,14 @@ class TaskRepository:
     async def find_all(cls) -> list[TaskAdd]:
         async with new_session() as session:
             query = select(TaskTable)
+            print(type(query))
+            print(f'Query: {query}')
             res = await session.execute(query)
+            print(type(res))
+            print(f'Res: {res}')
             task_models = res.scalars().all()
+            print(type(task_models))
+            print(f'Task models: {task_models}')
 
             # чтобы эндпоинт get_tasks() вернул TaskAdd, нужно объекты бд конвертировать в pydantic-схемы:
             tasks = [

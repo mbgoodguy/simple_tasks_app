@@ -41,7 +41,7 @@ async def create_tables():
         await conn.run_sync(Model.metadata.create_all)
 
 
-# асинхронная ф-ия для создания таблиц
+# асинхронная ф-ия для удаления таблиц
 async def delete_tables():
     async with engine.begin() as conn:
         await conn.run_sync(Model.metadata.drop_all)

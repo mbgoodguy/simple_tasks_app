@@ -10,8 +10,8 @@ from router import router as tasks_router
 @asynccontextmanager  # декоратор для создания контекстных менеджеров
 async def lifespan(app: FastAPI):
     print('Включение приложения')
-    await delete_tables()
-    print('БД очищена')
+    # await delete_tables()
+    # print('БД очищена')
     await create_tables()
     print('БД готова к работе. Таблицы созданы')
     yield
